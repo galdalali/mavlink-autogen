@@ -1,0 +1,18 @@
+option(
+    'language',
+    description: 'Language of generated sources/headers.',
+    type: 'combo',
+    choices: [
+        'C',
+        'CS',
+        'JavaScript',
+        'TypeScript',
+        'Python',
+        'WLua',
+        'ObjC',
+        'Swift',
+        'Java',
+        'C++11'
+    ],
+    yield: true
+)
