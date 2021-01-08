@@ -2339,19 +2339,19 @@
         <param index="6" label="sec">30</param>
         <param index="7">Reserved, send 0</param>
       </entry>
-      <entry value="32013" name="MAV_CMD_DO_MOUNT_RATE">
-        <description>Set mount normlized rate</description>
-        <param index="1" label="Gimbal_mode" minValue="0" maxValue="3" increment="1">0 - Rate, 1 - STOW, 2 - Pilot window, 3 - WP Auto, 4 - Tracking</param>
-        <param index="2" label="pitch_rate" minValue="-1.0" maxValue="1.0" increment="0.01">Pitch normalized mount rate.</param>
-        <param index="3" label="roll_rate" minValue="-1.0" maxValue="1.0" increment="0.01">roll normalized mount rate.</param>
-        <param index="4" label="yaw_rate" minValue="-1.0" maxValue="1.0" increment="0.01">yaw normalized mount rate.</param>
+      <entry value="32013" name="MAV_CMD_DO_GIMBAL_CONTROL">
+        <description>control mount modes and joystick</description>
+        <param index="1" label="gimbal_mode">0-Angle, 1-Rate, 2-Pilot Window, 3-STOW, 4-MAV</param>
+        <param index="2" label="pitch_rate" minValue="-1.0" maxValue="1.0" increment="0.01">Pitch normalized mount rate</param>
+        <param index="3" label="roll_rate" minValue="-1.0" maxValue="1.0" increment="0.01">roll normalized mount rate</param>
+        <param index="4" label="yaw_rate" minValue="-1.0" maxValue="1.0" increment="0.01">yaw normalized mount rate</param>
         <param index="5">Reserved, send 0</param>
         <param index="6">Reserved, send 0</param>
         <param index="7">Reserved, send 0</param>
       </entry>
-      <entry value="32014" name="MAV_CMD_SET_ZOOM_CHIMERA">
-        <description>Requested Camera Zoom</description>
-        <param index="1" label="zoom" minValue="1" maxValue="7" increment="1">thermal: X1 up to X4 Zoom. vis: X1 up to X7</param>
+      <entry value="32014" name="MAV_CMD_SET_GIMBAL_MOTOR_MODE">
+        <description>Set mount normlized rate</description>
+        <param index="1" label="mode" minValue="0" maxValue="1" increment="1">0-off, 1-on</param>
         <param index="2">Reserved, send 0</param>
         <param index="3">Reserved, send 0</param>
         <param index="4">Reserved, send 0</param>
@@ -2359,7 +2359,17 @@
         <param index="6">Reserved, send 0</param>
         <param index="7">Reserved, send 0</param>
       </entry>
-      <entry value="32015" name="MAV_CMD_SET_CHIMERA_GIMBAL_MODE">
+      <entry value="32015" name="MAV_CMD_DO_CHANGE_RESOLUTION">
+        <description>chgange video quality</description>
+        <param index="1" label="quality" minValue="0" maxValue="1" increment="1">0-low, 1-high</param>
+        <param index="2">Reserved, send 0</param>
+        <param index="3">Reserved, send 0</param>
+        <param index="4">Reserved, send 0</param>
+        <param index="5">Reserved, send 0</param>
+        <param index="6">Reserved, send 0</param>
+        <param index="7">Reserved, send 0</param>
+      </entry>
+      <entry value="32016" name="MAV_CMD_SET_CHIMERA_GIMBAL_MODE">
         <description>Set Gimbal Mode</description>
         <param index="1" label="Gimbal_mode" minValue="0" maxValue="3" increment="1">0 - Rate, 1 - Step, 2 - Angle, 3 - Follow_Mode</param>
         <param index="2" label="Center_Yaw">0-off, 1- on</param>
@@ -2369,7 +2379,7 @@
         <param index="6" label="STO">0-off, 1- on</param>
         <param index="7" label="Pano">0-off, 1- on</param>
       </entry>
-      <entry value="32016" name="MAV_CMD_SET_CHIMERA_GIMBAL_RATE">
+      <entry value="32017" name="MAV_CMD_SET_CHIMERA_GIMBAL_RATE">
         <description>Set Gimbal Rate Value</description>
         <param index="1" label="Pitch Rate" minValue="-127" maxValue="127" increment="1">Gimbal pitch rate</param>
         <param index="2" label="Yaw Rate" minValue="-127" maxValue="127" increment="1">Gimbal yaw rate</param>
@@ -2379,7 +2389,7 @@
         <param index="6">Reserved, send 0</param>
         <param index="7">Reserved, send 0</param>
       </entry>
-      <entry value="32017" name="MAV_CMD_SET_CHIMERA_GIMBAL_ANGLE">
+      <entry value="32018" name="MAV_CMD_SET_CHIMERA_GIMBAL_ANGLE">
         <description>Set Gimbal Angle Value</description>
         <param index="1" label="Angle_move_pitch" minValue="-180" maxValue="180" increment="1">Angle Move Pitch</param>
         <param index="2" label="Angle_move_yaw" minValue="-180" maxValue="180" increment="1">Angle Move Yaw</param>
@@ -2389,14 +2399,14 @@
         <param index="6">Reserved, send 0</param>
         <param index="7">Reserved, send 0</param>
       </entry>
-      <entry value="32018" name="MAV_CMD_CHIMERA_REQUESTED_DISPLAY_AND_ANALYTICS">
+      <entry value="32019" name="MAV_CMD_CHIMERA_REQUESTED_DISPLAY_AND_ANALYTICS">
         <description>Requested Display And Analytics status</description>
         <param index="1" label="display" minValue="0" maxValue="1" increment="1">0-Thermal, 1-Vis</param>
-        <param index="2" label="Analytics" minValue="0" maxValue="1" increment="1">0-Off, 1-Active</param>
-        <param index="3" label="VMD" minValue="0" maxValue="1" increment="1">0-Off, 1-Active</param>
-        <param index="4" label="Track" minValue="0" maxValue="1" increment="1">0-Off, 1-Active</param>
+        <param index="2" label="VMD" minValue="0" maxValue="1" increment="1">0-Off, 1-Active</param>
+        <param index="3" label="Track" minValue="0" maxValue="1" increment="1">0-Off, 1-Active</param>
+        <param index="4" label="Track_Target_ID" minValue="0" maxValue="1000" increment="1">ID number of the target that the user wish to activate tracking for. Value is relevant only if Tracking is active</param>
         <param index="5" label="Deactivate_video_stream" minValue="0" maxValue="1" increment="1">0-Stream Active,1-Non Active</param>
-        <param index="6" label="Track_Target_ID" minValue="0" maxValue="1000" increment="1">ID number of the target that the user wish to activate tracking for. Value is relevant only if Tracking is active</param>
+        <param index="6">Reserved, send 0</param>
         <param index="7">Reserved, send 0</param>
       </entry>
 
